@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang  =  "en"  >
+
+<head>
+
+    <meta charset  =  "utf-8">
+
+    <title>Minimum Number Calculator</title>
+
+    
+
+</head>
+
+<body>
+    <script>
+        let textBoxCount = 1;
+
+const textBoxContainer = document.getElementById("textBoxContainer");
+
+const addBtn = document.getElementById("addBtn");
+
+const minBtn = document.getElementById("minBtn");
+
+const minResult = document.getElementById("minResult");
+
+addBtn.addEventListener("click", () => {
+
+    textBoxCount++;
+
+    const newTextBox = document.createElement("input");
+
+    newTextBox.type = "number";
+
+    newTextBox.id = "numInput" + textBoxCount;
+
+    newTextBox.name = "numInput" + textBoxCount;
+
+    textBoxContainer.appendChild(newTextBox);
+
+});
+
+minBtn.addEventListener("click", () => {
+
+    let minValue = Number.MAX_VALUE;
+
+    for (let i = 1; i <= textBoxCount; i++) {
+
+        const input = document.getElementById("numInput" + i);
+
+        if (input.value !== "") {
+
+            const num = Number(input.value);
+
+            if (num < minValue) {
+
+                minValue = num;
+
+            }
+
+        }
+
+    }
+
+    minResult.textContent = minValue;
+
+});
+    </script>
+
+    <h1>Minimum Number Calculator</h1>
+
+    <button id  =  "addBtn"  >Add Text Box</button >
+
+    <div id  =  "textBoxContainer">
+
+        <!-- Text boxes will be added here -->
+
+    </div>
+
+    <button id  =  "minBtn"  >Find Minimum</button>
+
+    <p>Minimum: <span id  =  "minResult"></span></p>
+
+</body>
+
+</html>
+
+
+

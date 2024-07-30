@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a=2;
+        // var r=3;
+        function power()
+        {
+            var a = document.getElementById("no").value;
+            var r = document.getElementById("pow").value;
+            var ans=1;
+            for(let i=0;i<r;i++)
+            {
+                ans = ans*a;
+
+
+
+
+            }
+            
+            
+            document.getElementById("ans").value=ans;
+            document.getElementById("mydiv").innerHTML=`Ans of ${a} to the power ${r} is ${ans}`
+        }
+        
+    </script>
+    <div>
+        Enter No. : <input type="number" name="no" id="no"><br><br>
+        Enter Power : <input type="number" name="pow" id="pow"><br><br>
+        Result : <input type="text" name="ans" id="ans"><br><br>
+        
+        <button type="button" name="res" id="res" onclick="power()">Result</button>
+    </div>
+    <div id="mydiv">
+
+    </div>
+</body>
+</html>

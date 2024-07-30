@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="integer" >int</label>
+    <input type="text" name="val" id="integer">
+    <label for="message" >msg</label>
+    <input type="text" name="val" id="message">
+       
+    <button type="button" onclick="show()">Show</button> 
+    <span id="message1"></span>   
+
+    <script>
+        function show()
+        {
+       let int1=(document.getElementById("integer").value);
+       let msg=(document.getElementById("message").value);
+       let message=(document.getElementById("message1"));
+       for(let i=0;i<int1;i++)
+       {
+        message.innerHTML+=msg+" "
+       }
+    }
+    </script>
+
+    
+</body>
+</html>

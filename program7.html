@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findMin() {
+            let min = arguments[0];
+  for (let i = 0; i < arguments.length; i++) {
+    if (arguments[i] < min) {
+      min = arguments[i];
+    }
+  }
+  return min;
+}
+
+let userInput = prompt("Enter numbers separated by comma: ");
+let numbers = userInput.split(",").map(Number);
+document.write("Minimum value is "+findMin(...numbers))
+
+console.log("Minimum value is: " + findMin(...numbers));
+    </script>
+</body>
+</html>

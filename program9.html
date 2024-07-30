@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>
+        --------------------------------------------------------------------<br>
+        **********Calculate Compound Interest**********<br>
+        ---------------------------------------------------------------------<br>
+    </h1>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><label for="p">Principal</label></td>
+            <td>-</td>
+            <td><input type="text" id="p" name="principal"></td>
+            
+            
+           
+        </tr>
+        <tr>
+            <td><label for="r">Rate of Interest</label></td>
+            <td>-</td>
+            <td><input type="text" id="r" name="rate"></td>
+           
+        </tr>
+        <tr>
+           
+            <td><label for="pe">Period</label></td>
+            <td>-</td>
+            <td><input type="text" id="pe" name="time"></td>
+           
+        </tr>
+        <tr>
+            <td><label for="c">Compound Interest</label></td>
+            <td>-</td>
+            <td><input type="text" id="c" name="ci"></td>
+
+        </tr>
+        <br>
+        <tr>
+            <td><br><button type="button" onclick="Interest()">Calculate Interest</button></td>
+           
+        </tr>
+    </table>
+
+
+
+    <script>
+        function Interest()
+        {
+            let principal=parseInt(document.getElementById("p").value);
+            let rate=parseInt(document.getElementById("r").value);
+            let time=parseInt(document.getElementById("pe").value);
+            // let ci=(principal*rate*time)/100; 
+            let ci= (principal * Math.pow((1+ rate/100),time))-principal;
+            document.getElementById("c").value=ci;
+        }
+
+    </script>
+   
+
+   
+</body>
+</html>
